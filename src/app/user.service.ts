@@ -10,8 +10,8 @@ export class UserService {
   private loginURL: string;
 
   constructor(private httpClient: HttpClient) {
-    this.loginURL = 'http://127.0.0.1:8000/register';
-    this.registerURL = 'http://127.0.0.1:8000/api/login_check'
+    this.registerURL = 'http://127.0.0.1:8000/register';
+    this.loginURL = 'http://127.0.0.1:8000/api/login_check'
   };
 
   registerUser(pUser) {
@@ -19,6 +19,7 @@ export class UserService {
   };
 
   loginUser(pCredentials) {
+    console.log('caca')
     return this.httpClient.post(this.loginURL, pCredentials).toPromise();
   };
 
