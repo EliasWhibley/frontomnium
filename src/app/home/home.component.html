@@ -1,1 +1,17 @@
-<p>home works!</p>
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <h1>All the posts!</h1>
+        <button class="btn btn-dark" routerLink="/home/createPost">Add post</button>
+    </div>
+    
+    <div class="row">
+        <div class="col-3 card" *ngFor="let post of allPosts">
+            <div class="card-body">
+              <h5 class="card-title">{{post.name}}</h5>
+              <p class="card-text">{{post.description}}</p>
+              <a [routerLink]="'/updatePost/'+post.id" class="card-link">Update</a>
+            </div>
+          </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

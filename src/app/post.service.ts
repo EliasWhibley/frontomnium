@@ -14,7 +14,7 @@ export class PostService {
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        Authorization: 'Bearer' + this.userService.getToken()
+        Authorization: 'Bearer ' + this.userService.getToken()
       })
     }
   };
@@ -36,7 +36,7 @@ export class PostService {
   };
 
   deletePost(pId) {
-    return this.httpClient.put(this.apiUrl + '/' + pId, this.httpOptions).toPromise();
+    return this.httpClient.delete(this.apiUrl + '/' + pId, this.httpOptions).toPromise();
   };
 
 }

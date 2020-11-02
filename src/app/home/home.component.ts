@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  allPosts: any;
+  constructor(private PostService: PostService) { }
 
-  constructor() { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.allPosts = await this.PostService.getPosts();
   }
 
 }

@@ -1,1 +1,20 @@
-<p>register works!</p>
+<form class="form-signin" [formGroup]="formRegister" (ngSubmit)="register()">
+    
+    <h1 class="h3 mb-3 font-weight-normal">Please create your user</h1>
+    <label for="inputUsername" class="sr-only">Username</label>
+    <input type="text" id="inputUsername" class="form-control" placeholder="Username" formControlName="username" required autofocus>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password" required>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" formControlName="email" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!formRegister.valid" >Register</button>
+    <p *ngIf="formRegister.controls.email.errors?.required">Check your email!</p>
+  </form>
+
+  <div class="alert alert-success" *ngIf="status === true">
+    New user in database!
+</div>
+
+<div class="alert alert-danger" *ngIf="errorResgistration === true">
+    Error in registrartion process! :(
+</div>

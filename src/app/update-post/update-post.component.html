@@ -1,11 +1,12 @@
-<form class="form-signin" [formGroup]="formPost" (ngSubmit)="newPost()">
+
+<form class="form-signin" [formGroup]="formUpdate">
     
-    <h1 class="h3 mb-3 font-weight-normal">Please create your post</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Please update your post</h1>
     <label for="inputName" class="sr-only">Name</label>
     <input type="text" id="inputName" class="form-control" placeholder="name" formControlName="name" required autofocus>
     <label for="inputDescription" class="sr-only">Description</label>
     <input type="text" id="inputDescription" class="form-control" placeholder="description" formControlName="description" required>
     
-    <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!formPost.valid" >Create</button>
-   
+    <button class="btn btn-lg btn-primary btn-block" (click)="update()" [disabled]="!formUpdate.valid" >Update</button>
+    <button class="btn btn-warning" (click)="deletePost()">Delete post</button>x
   </form>

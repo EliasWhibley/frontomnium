@@ -2,9 +2,10 @@
     
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="inputUsername" class="sr-only">Username</label>
-    <input type="email" id="inputUsername" class="form-control" placeholder="Username" formControlName="username" required autofocus>
+    <input type="text" id="inputUsername" class="form-control" placeholder="Username" formControlName="username" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password" required>
     <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!formLogin.valid">Sign in</button>
+    <button class="btn btn-lg btn-info btn-block" routerLink="/register">Register</button>
     <p *ngIf="formLogin.controls.username.errors?.required">Complete the credentials</p>
   </form>
