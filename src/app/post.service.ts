@@ -15,6 +15,7 @@ export class PostService {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
         Authorization: 'Bearer ' + this.userService.getToken()
+        //Retirar el getToken y copiarlo a mano para probar la API si no funciona el login
       })
     }
   };

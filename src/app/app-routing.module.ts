@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: '', pathMatch: "full", redirectTo: "/login" },
   { path: "login", component: LoginComponent },
   {
+    //Comentar el canActivate para probar la API si no funciona el login
     path: "home", component: HomeComponent, /* canActivate: [UserTokenGuard], */ children: [
       {
         path: "createPost",

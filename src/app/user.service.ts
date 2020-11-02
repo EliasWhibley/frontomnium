@@ -19,7 +19,6 @@ export class UserService {
   };
 
   loginUser(pCredentials) {
-    console.log('caca')
     return this.httpClient.post(this.loginURL, pCredentials).toPromise();
   };
 
